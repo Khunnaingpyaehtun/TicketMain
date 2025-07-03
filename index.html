@@ -532,7 +532,7 @@
                                 return;
                         }
 
-                        const response = await fetch(`http://localhost:3000/api/seats/${cinemaCode}`);
+                        const response = await fetch(`http://49b355f6fc8956c98c276eccfd35634e-527186654.ap-southeast-1.elb.amazonaws.com/api/seats/${cinemaCode}`);
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
                         }
@@ -775,7 +775,7 @@
                         };
                         
                         // Send POST request to API endpoint
-                        fetch('http://localhost:3000/api/seats', {
+                        fetch('http://49b355f6fc8956c98c276eccfd35634e-527186654.ap-southeast-1.elb.amazonaws.com/api/seats', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
