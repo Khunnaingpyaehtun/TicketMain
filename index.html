@@ -239,7 +239,7 @@
                  <div class="space-y-4">
                      <button class="btn btn-secondary w-full text-lg" data-cinema="maesot">SF CINEMA (MAE SOT)</button>
                      <button class="btn btn-secondary w-full text-lg" data-cinema="chiangmai">SFX CINEMA (MAYA CHIANGMAI)</button>
-                     <button class="btn btn-secondary w-full text-lg" data-cinema="mbk">SF CINEMA (MBK CENTER)</button>
+                     <button class="btn btn-secondary w-full text-lg" data-cinema="mbk">SF CINEMA (MBK CENTER Bangkok)</button>
                  </div>
              </div>
         </div>
@@ -363,7 +363,7 @@
             const cinemaData = {
                  'maesot': {
                     name: 'SF CINEMA (MAE SOT)',
-                    time: '၁၉/၇/၂၀၂၅ ညနေ ၃:၀၀',
+                    time: '၁၉/၇/၂၀၂၅ ညနေ ၆:၀၀',
                     prices: { n: 300, p: 450, s: 950 },
                     rowLabels: ["M", "L", "K", "J", "H", "G", "F", "E", "D", "C", "B", "A", "AA"],
                     layout: [
@@ -405,8 +405,8 @@
                     ]
                 },
                 'mbk': {
-                    name: 'SF CINEMA (MBK CENTER)',
-                    time: '၁၉/၇/၂၀၂၅ ညနေ ၄:၀၀',
+                    name: 'SF CINEMA (MBK CENTER Bangkok)',
+                    time: '၁၉/၇/၂၀၂၅ ညနေ ၆:၀၀',
                     prices: { n: 400, p: 550, s: 1200 },
                     rowLabels: ["P", "N", "M", "L", "K", "J", "H", "G", "F", "E", "D", "C", "B", "A", "AA"],
                     layout: [
@@ -539,7 +539,7 @@
                     const rowLabelDiv = document.createElement('div');
                     rowLabelDiv.className = 'row-label';
                     rowLabelDiv.textContent = rowLabelText;
-                    rowDiv.appendChild(rowLabelDiv);
+                    rowDiv.appendChild(rowLabelDiv); 
 
                     let seatNumber = 1;
                     for (let i = 0; i < rowLayout.length; i++) {
