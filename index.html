@@ -277,7 +277,7 @@
                                 legendContainer.innerHTML = `
                                     <div class="flex items-center"><div class="seat price-300 !m-0"></div><span class="ml-2">300 Baht</span></div>
                                     <div class="flex items-center"><div class="seat price-450 !m-0"></div><span class="ml-2">450 Baht</span></div>
-                                    <div class="flex items-center"><div class="seat price-950 !m-0"></div><span class="ml-2">950 Baht</span></div>
+                                    <div class="flex items-center"><div class="seat price-950 !m-0"></div><span class="ml-2">950 Baht (Pair)</span></div>
                                     <div class="flex items-center"><div class="seat selected !m-0"></div><span class="ml-2">ရွေးချယ်ထား</span></div>
                                     <div class="flex items-center"><div class="seat sold !m-0"></div><span class="ml-2">ရောင်းပြီး</span></div>
                                 `;
@@ -287,7 +287,7 @@
                                 legendContainer.innerHTML = `
                                     <div class="flex items-center"><div class="seat price-350 !m-0"></div><span class="ml-2">350 Baht</span></div>
                                     <div class="flex items-center"><div class="seat price-450 !m-0"></div><span class="ml-2">450 Baht</span></div>
-                                    <div class="flex items-center"><div class="seat price-1000 !m-0"></div><span class="ml-2">1000 Baht</span></div>
+                                    <div class="flex items-center"><div class="seat price-1000 !m-0"></div><span class="ml-2">1000 Baht (Pair)</span></div>
                                     <div class="flex items-center"><div class="seat selected !m-0"></div><span class="ml-2">ရွေးချယ်ထား</span></div>
                                     <div class="flex items-center"><div class="seat sold !m-0"></div><span class="ml-2">ရောင်းပြီး</span></div>
                                 `;
@@ -297,7 +297,7 @@
                                 legendContainer.innerHTML = `
                                     <div class="flex items-center"><div class="seat price-400 !m-0"></div><span class="ml-2">400 Baht</span></div>
                                     <div class="flex items-center"><div class="seat price-550 !m-0"></div><span class="ml-2">550 Baht</span></div>
-                                    <div class="flex items-center"><div class="seat price-1200 !m-0"></div><span class="ml-2">1200 Baht</span></div>
+                                    <div class="flex items-center"><div class="seat price-1200 !m-0"></div><span class="ml-2">1200 Baht (Pair)</span></div>
                                     <div class="flex items-center"><div class="seat selected !m-0"></div><span class="ml-2">ရွေးချယ်ထား</span></div>
                                     <div class="flex items-center"><div class="seat sold !m-0"></div><span class="ml-2">ရောင်းပြီး</span></div>
                                 `;
@@ -654,19 +654,19 @@
                                             // တွဲဖက်ခုံ ရှိပြီး မရောင်းရသေးလျှင်
                                             if (pairSeat && !pairSeat.classList.contains('sold')) {
                                                 const isSelected = seat.classList.contains('selected');
-                                                const price = parseInt(seat.dataset.price);
+                                                const price = parseInt(seat.dataset.price); // This price is for the PAIR
 
                                                 if (isSelected) {
                                                     // နှစ်ခုံလုံးကို ရွေးချယ်မှုမှ ပြန်ဖြုတ်သည်
                                                     seat.classList.remove('selected');
                                                     pairSeat.classList.remove('selected');
-                                                    totalPrice -= (price * 2);
+                                                    totalPrice -= price; // ၂ ခုံတွဲဈေးနှုန်းကို နှုတ်သည်
                                                     selectedSeats = selectedSeats.filter(s => s.id !== seatId && s.id !== pairSeatId);
                                                 } else {
                                                     // နှစ်ခုံလုံးကို ရွေးချယ်သည်
                                                     seat.classList.add('selected');
                                                     pairSeat.classList.add('selected');
-                                                    totalPrice += (price * 2);
+                                                    totalPrice += price; // ၂ ခုံတွဲဈေးနှုန်းကို ပေါင်းသည်
                                                     // array ထဲသို့ ထည့်ရာတွင် မရှိသေးမှ ထည့်ပါ
                                                     if (!selectedSeats.some(s => s.id === seatId)) {
                                                         selectedSeats.push({id: seatId, price: price});
